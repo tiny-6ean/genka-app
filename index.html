@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>原価計算ミニアプリ（豆粒式）</title>
 <style>
-  /* 全体 */
   body {
     font-family: "Noto Sans JP", sans-serif;
     background: #F8F6F3;
@@ -18,8 +17,6 @@
     margin: 0 auto;
     padding: 32px 20px 80px;
   }
-
-  /* セクション共通 */
   section {
     margin-bottom: 48px;
   }
@@ -43,6 +40,11 @@
     margin-top: 12px;
     line-height: 1.8;
   }
+  .hero-img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 24px 0;
+  }
 
   /* カード */
   .card {
@@ -54,7 +56,6 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.04);
   }
 
-  /* 入力欄 */
   label {
     font-size: 13px;
     color: #777;
@@ -74,7 +75,6 @@
     box-sizing: border-box;
   }
 
-  /* ボタン */
   button {
     width: 100%;
     padding: 14px;
@@ -90,7 +90,6 @@
     background: #DCD8D3;
   }
 
-  /* 計算結果ブロック */
   .result-item {
     background: #F8F6F3;
     padding: 12px 16px;
@@ -99,7 +98,6 @@
     font-size: 15px;
   }
 
-  /* 手数料カード */
   .fee-card {
     background: #F3F1EE;
     border-radius: 12px;
@@ -112,14 +110,12 @@
     margin: 8px 0;
   }
 
-  /* 小見出し */
   .sub-title {
     font-size: 16px;
     color: #555;
     margin-bottom: 8px;
   }
 
-  /* 箇条書き（静かめ） */
   .list-soft {
     list-style: none;
     padding-left: 0;
@@ -130,7 +126,6 @@
     color: #777;
   }
 
-  /* フッター */
   footer {
     text-align: center;
     font-size: 13px;
@@ -151,6 +146,9 @@
       作品の価値を、数字で静かに見つめ直すための<br>
       小さな原価計算ツールです。
     </p>
+
+    <!-- 生成した画像を組み込む -->
+    <img src="images/desk.jpg" alt="静かな制作机のイラスト" class="hero-img">
   </section>
 
   <!-- ミニアプリ本体 -->
@@ -279,10 +277,8 @@ function calc() {
   const pack = Number(document.getElementById("pack").value) || 0;
   const price = Number(document.getElementById("price").value) || 0;
 
-  // 制作時間コスト
   const labor = (time / 60) * wage;
 
-  // 手数料計算
   let fee = 0;
   if (feeType === "minne") fee = price * 0.10659;
   if (feeType === "minne_plus") fee = price * 0.10159;
