@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>原価計算ミニアプリ（豆粒式）</title>
 <style>
+  /* 全体 */
   body {
     font-family: "Noto Sans JP", sans-serif;
     background: #F8F6F3;
@@ -17,6 +18,8 @@
     margin: 0 auto;
     padding: 32px 20px 80px;
   }
+
+  /* セクション共通 */
   section {
     margin-bottom: 48px;
   }
@@ -34,12 +37,6 @@
     text-align: center;
     margin-bottom: 40px;
   }
-  .lead {
-    font-size: 15px;
-    color: #666;
-    margin-top: 12px;
-    line-height: 1.8;
-  }
   .hero-img {
     width: 100%;
     border-radius: 12px;
@@ -53,12 +50,12 @@
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 24px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
   }
 
+  /* 入力欄 */
   label {
-    font-size: 13px;
-    color: #777;
+    font-size: 14px;
+    color: #666;
     display: block;
     margin-top: 8px;
   }
@@ -75,6 +72,7 @@
     box-sizing: border-box;
   }
 
+  /* ボタン */
   button {
     width: 100%;
     padding: 14px;
@@ -90,14 +88,7 @@
     background: #DCD8D3;
   }
 
-  .result-item {
-    background: #F8F6F3;
-    padding: 12px 16px;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    font-size: 15px;
-  }
-
+  /* 手数料カード */
   .fee-card {
     background: #F3F1EE;
     border-radius: 12px;
@@ -110,12 +101,14 @@
     margin: 8px 0;
   }
 
+  /* 小見出し */
   .sub-title {
     font-size: 16px;
     color: #555;
     margin-bottom: 8px;
   }
 
+  /* 箇条書き（静かめ） */
   .list-soft {
     list-style: none;
     padding-left: 0;
@@ -126,6 +119,7 @@
     color: #777;
   }
 
+  /* フッター */
   footer {
     text-align: center;
     font-size: 13px;
@@ -142,12 +136,14 @@
   <!-- ヒーロー -->
   <section class="hero">
     <h1>原価計算ミニアプリ（豆粒式）</h1>
-    <p class="lead">
-      作品の価値を、数字で静かに見つめ直すための<br>
-      小さな原価計算ツールです。
+    <p>
+      ハンドメイドの価格は「なんとなく」ではなく、<br>
+      材料・時間・技術・手数料…いくつもの要素で成り立っています。<br><br>
+      このページは、作品の価値を静かに見つめ直すための<br>
+      原価計算ミニアプリと、その背景にある「価格の理由」のまとめです。
     </p>
 
-    <!-- 生成した画像を組み込む -->
+    <!-- 画像をここに追加 -->
     <img src="images/bg.png" alt="静かな制作机のイラスト" class="hero-img">
   </section>
 
@@ -188,9 +184,9 @@
 
     <div class="card">
       <h3>計算結果</h3>
-      <div class="result-item">原価：<span id="cost">-</span> 円</div>
-      <div class="result-item">利益：<span id="profit">-</span> 円</div>
-      <div class="result-item">利益率：<span id="rate">-</span> %</div>
+      <p>原価：<span id="cost">-</span> 円</p>
+      <p>利益：<span id="profit">-</span> 円</p>
+      <p>利益率：<span id="rate">-</span> %</p>
     </div>
   </section>
 
@@ -264,8 +260,7 @@
 </div>
 
 <footer>
-  このページが、あなたの作品の価値を静かに見つめ直すきっかけになりますように。<br>
-  Tiny Bean Studio（静灯工房）
+  このページが、あなたの作品の価値を静かに見つめ直すきっかけになりますように。
 </footer>
 
 <script>
