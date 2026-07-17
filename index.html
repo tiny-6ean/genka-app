@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>原価計算ミニアプリ（豆粒式）</title>
 <style>
-  /* 全体 */
   body {
     font-family: "Noto Sans JP", sans-serif;
     background: #F8F6F3;
@@ -119,6 +118,7 @@
     background: #F8F6F3;
   }
 </style>
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
 
@@ -133,7 +133,7 @@
       原価計算ミニアプリと、その背景にある「価格の理由」のまとめです。
     </p>
 
-    <img src="images/bg.png" alt="静かな制作机のイラスト" class="hero-img">
+    <img src="bg.png" alt="静かな制作机のイラスト" class="hero-img">
   </section>
 
   <section>
@@ -271,6 +271,10 @@ function calc() {
   document.getElementById("cost").innerText = Math.round(cost);
   document.getElementById("profit").innerText = Math.round(profit);
   document.getElementById("rate").innerText = Math.round(rate);
+}
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
 }
 </script>
 
